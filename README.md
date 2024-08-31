@@ -1,5 +1,5 @@
 # Ghidra Processor Module for Renesas M16C Architecture
-## Includes Special Function Registers (SFR) for M16C/62P
+#### Includes Special Function Registers (SFR) for M16C/62P
 
 ## Install instructions
 
