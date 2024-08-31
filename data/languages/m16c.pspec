@@ -16,15 +16,206 @@
   </segmentop>
   <!-- <data_space space="ram" ptr_wordsize="3"/> -->
   <default_symbols>
-  <symbol name="VECTOR_UNDEFINEDINST" address="FFFDC" entry="true" type="code_ptr"/>
-  <symbol name="VECTOR_OVERFLOW"      address="FFFE0" entry="true" type="code_ptr"/>
-  <symbol name="VECTOR_BRK"           address="FFFE4" entry="true" type="code_ptr"/>
-  <symbol name="VECTOR_ADDRESSMATCH"  address="FFFE8" entry="true" type="code_ptr"/>
-  <symbol name="VECTOR_SINGLESTEP"    address="FFFEC" entry="true" type="code_ptr"/>
-  <symbol name="VECTOR_WATCHDOG"      address="FFFF0" entry="true" type="code_ptr"/>
-  <symbol name="VECTOR_DBC"           address="FFFF4" entry="true" type="code_ptr"/>
-  <symbol name="VECTOR_NMI"           address="FFFF8" entry="true" type="code_ptr"/>
-  <symbol name="VECTOR_RESET"         address="FFFFC" entry="true" type="code_ptr"/>
+    <symbol name="Processor_mode_register_0_(PM0)" address="near:0x0004"/>
+    <symbol name="Processor_mode_register_1_(PM1)" address="near:0x0005"/>
+    <symbol name="System_clock_control_register_0_(CM0)" address="near:0x0006"/>
+    <symbol name="System_clock_control_register_1_(CM1)" address="near:0x0007"/>
+    <symbol name="Chip_select_control_register_(CSR)" address="near:0x0008"/>
+    <symbol name="Address_match_interrupt_enable_register_(AIER)" address="near:0x0009"/>
+    <symbol name="Protect_register_(PRCR)" address="near:0x000A"/>
+    <symbol name="Data_Bank_Register_(DBR)" address="near:0x000B"/>
+    <symbol name="Oscillation_Stop_Detection_Register(CM2_ADDR)" address="near:0x000C"/>
+    <symbol name="Watchdog_timer_start_register_(WDTS)" address="near:0x000E"/>
+    <symbol name="Watchdog_timer_control_register_(WDC)" address="near:0x000F"/>
+    <symbol name="Address_match_interrupt_register_0_(RMAD0)" address="near:0x0010"/>
+    <symbol name="Address_match_interrupt_register_1_(RMAD1)" address="near:0x0014"/>
+    <symbol name="Power_supply_detection_register_1(vcr1_addr)" address="near:0x0019"/>
+    <symbol name="Power_supply_detection_register_2(vcr2_addr)" address="near:0x001A"/>
+    <symbol name="Chip_select_expansion_control_register(cse_addr)" address="near:0x001B"/>
+    <symbol name="PLC_control_register_0(plc0_addr)" address="near:0x001C"/>
+    <symbol name="Processor_mode_register_2(pm2_addr)" address="near:0x001E"/>
+    <symbol name="Power_supply_down_detection_register(d4int_addr)" address="near:0x001F"/>
+    <symbol name="DMA0_source_pointer_(SAR0)" address="near:0x0020"/>
+    <symbol name="DMA0_destination_pointer_(DAR0)" address="near:0x0024"/>
+    <symbol name="DMA0_transfer_counter_(TCR0)" address="near:0x0028"/>
+    <symbol name="DMA0_control_register_(DM0CON)" address="near:0x002C"/>
+    <symbol name="DMA1_source_pointer_(SAR1)" address="near:0x0030"/>
+    <symbol name="DMA1_destination_pointer_(DAR1)" address="near:0x0034"/>
+    <symbol name="DMA1_transfer_counter_(TCR1)" address="near:0x0038"/>
+    <symbol name="DMA1_control_register_(DM1CON)" address="near:0x003C"/>
+    <symbol name="INT3_interrupt_control_register_(INT3IC)" address="near:0x0044"/>
+    <symbol name="Timer_B5_interrupt_control_register_(TB5IC)" address="near:0x0045"/>
+    <symbol name="Timer_B4_interrupt_control_register_(TB4IC)(U1BCNIC)" address="near:0x0046"/>
+    <symbol name="Timer_B3_interrupt_control_register_(TB3IC)(U0BCNIC)" address="near:0x0047"/>
+    <symbol name="SI/O4_interrupt_control_register_(S4IC)(INT5IC)" address="near:0x0048"/>
+    <symbol name="SI/O3_interrupt_control_register_(S3IC)(INT4IC)" address="near:0x0049"/>
+    <symbol name="Bus_collision_detection_interrupt_control_register_(BCNIC)" address="near:0x004A"/>
+    <symbol name="DMA0_interrupt_control_register_(DM0IC)" address="near:0x004B"/>
+    <symbol name="DMA1_interrupt_control_register_(DM1IC)" address="near:0x004C"/>
+    <symbol name="Key_input_interrupt_control_register_(KUPIC)" address="near:0x004D"/>
+    <symbol name="A-D_conversion_interrupt_control_register_(ADIC)" address="near:0x004E"/>
+    <symbol name="UART2_transmit_interrupt_control_register_(S2TIC)" address="near:0x004F"/>
+    <symbol name="UART2_receive_interrupt_control_register_(S2RIC)" address="near:0x0050"/>
+    <symbol name="UART0_transmit_interrupt_control_register_(S0TIC)" address="near:0x0051"/>
+    <symbol name="UART0_receive_interrupt_control_register_(S0RIC)" address="near:0x0052"/>
+    <symbol name="UART1_transmit_interrupt_control_register_(S1TIC)" address="near:0x0053"/>
+    <symbol name="UART1_receive_interrupt_control_register_(S1RIC)" address="near:0x0054"/>
+    <symbol name="Timer_A0_interrupt_control_register_(TA0IC)" address="near:0x0055"/>
+    <symbol name="Timer_A1_interrupt_control_register_(TA1IC)" address="near:0x0056"/>
+    <symbol name="Timer_A2_interrupt_control_register_(TA2IC)" address="near:0x0057"/>
+    <symbol name="Timer_A3_interrupt_control_register_(TA3IC)" address="near:0x0058"/>
+    <symbol name="Timer_A4_interrupt_control_register_(TA4IC)" address="near:0x0059"/>
+    <symbol name="Timer_B0_interrupt_control_register_(TB0IC)" address="near:0x005A"/>
+    <symbol name="Timer_B1_interrupt_control_register_(TB1IC)" address="near:0x005B"/>
+    <symbol name="Timer_B2_interrupt_control_register_(TB2IC)" address="near:0x005C"/>
+    <symbol name="INT0_interrupt_control_register_(INT0IC)" address="near:0x005D"/>
+    <symbol name="INT1_interrupt_control_register_(INT1IC)" address="near:0x005E"/>
+    <symbol name="INT2_interrupt_control_register_(INT2IC)" address="near:0x005F"/>
+    <symbol name="Flash_identification_register(fidr_addr)" address="near:0x01b4"/>
+    <symbol name="Flash_memory_control_register_1(fmr1_addr)" address="near:0x01b5"/>
+    <symbol name="Flash_memory_control_register_0(fmr0_addr)" address="near:0x01b7"/>
+    <symbol name="Address_match_interrupt_register_2(rmad2_addr)" address="near:0x01b8"/>
+    <symbol name="Address_match_interrupt_enable_register_2(aier2_addr)" address="near:0x01bb"/>
+    <symbol name="Address_match_interrupt_register_3(rmad3_addr)" address="near:0x01bc"/>
+    <symbol name="Peripheral_clock_select_register(pclkr_addr)" address="near:0x025e"/>
+    <symbol name="Timer_B3,_4,_5_count_start_flag_(TBSR)" address="near:0x0340"/>
+    <symbol name="Timer_A1-1_register_(TA11)" address="near:0x0342"/>
+    <symbol name="Timer_A2-1_register_(TA21)" address="near:0x0344"/>
+    <symbol name="Timer_A4-1_register_(TA41)" address="near:0x0346"/>
+    <symbol name="Three-phase_PWM_control_register_0(INVC0)" address="near:0x0348"/>
+    <symbol name="Three-phase_PWM_control_register_1(INVC1)" address="near:0x0349"/>
+    <symbol name="Three-phase_output_buffer_register_0(IDB0)" address="near:0x034A"/>
+    <symbol name="Three-phase_output_buffer_register_1(IDB1)" address="near:0x034B"/>
+    <symbol name="Dead_time_timer(DTT)" address="near:0x034C"/>
+    <symbol name="Timer_B2_interrupt_occurrence_frequency_set_counter(ICTB2)" address="near:0x034D"/>
+    <symbol name="Timer_B3_register_(TB3)" address="near:0x0350"/>
+    <symbol name="Timer_B4_register_(TB4)" address="near:0x0352"/>
+    <symbol name="Timer_B5_register_(TB5)" address="near:0x0354"/>
+    <symbol name="Timer_B3_mode_register_(TB3MR)" address="near:0x035B"/>
+    <symbol name="Timer_B4_mode_register_(TB4MR)" address="near:0x035C"/>
+    <symbol name="Timer_B5_mode_register_(TB5MR)" address="near:0x035D"/>
+    <symbol name="Interrupt_request_cause_select_register_2(ifsr2a_addr)" address="near:0x035e"/>
+    <symbol name="Interrupt_cause_select_register_(IFSR)" address="near:0x035F"/>
+    <symbol name="SI/O3_transmit/receive_register_(S3TRR)" address="near:0x0360"/>
+    <symbol name="SI/O3_control_register_(S3C)" address="near:0x0362"/>
+    <symbol name="SI/O3_bit_rate_generator_(S3BRG)" address="near:0x0363"/>
+    <symbol name="SI/O4_transmit/receive_register_(S4TRR)" address="near:0x0364"/>
+    <symbol name="SI/O4_control_register_(S4C)" address="near:0x0366"/>
+    <symbol name="SI/O4_bit_rate_generator_(S4BRG)" address="near:0x0367"/>
+    <symbol name="UART0_special_mode_register_4(u0smr4_addr)" address="near:0x036c"/>
+    <symbol name="UART0_special_mode_register_3(u0smr3_addr)" address="near:0x036d"/>
+    <symbol name="UART0_special_mode_register_2(u0smr2_addr)" address="near:0x036e"/>
+    <symbol name="UART0_special_mode_register(u0smr_addr)" address="near:0x036f"/>
+    <symbol name="UART1_special_mode_register_4(u1smr4_addr)" address="near:0x0370"/>
+    <symbol name="UART1_special_mode_register_3(u1smr3_addr)" address="near:0x0371"/>
+    <symbol name="UART1_special_mode_register_2(u1smr2_addr)" address="near:0x0372"/>
+    <symbol name="UART1_special_mode_register(u1smr_addr)" address="near:0x0373"/>
+    <symbol name="UART2_special_mode_register_4(u2smr4_addr)" address="near:0x0374"/>
+    <symbol name="UART2_special_mode_register_3(U2SMR3)" address="near:0x0375"/>
+    <symbol name="UART2_special_mode_register_2(U2SMR2)" address="near:0x0376"/>
+    <symbol name="UART2_special_mode_register_(U2SMR)" address="near:0x0377"/>
+    <symbol name="UART2_transmit/receive_mode_register_(U2MR)" address="near:0x0378"/>
+    <symbol name="UART2_bit_rate_generator_(U2BRG)" address="near:0x0379"/>
+    <symbol name="UART2_transmit_buffer_register_(U2TB)" address="near:0x037A"/>
+    <symbol name="UART2_transmit/receive_control_register_0_(U2C0)" address="near:0x037C"/>
+    <symbol name="UART2_transmit/receive_control_register_1_(U2C1)" address="near:0x037D"/>
+    <symbol name="UART2_receive_buffer_register_(U2RB)" address="near:0x037E"/>
+    <symbol name="Count_start_flag_(TABSR)" address="near:0x0380"/>
+    <symbol name="Clock_prescaler_reset_flag_(CPSRF)" address="near:0x0381"/>
+    <symbol name="One-shot_start_flag_(ONSF)" address="near:0x0382"/>
+    <symbol name="Trigger_select_register_(TRGSR)" address="near:0x0383"/>
+    <symbol name="Up-down_flag_(UDF)" address="near:0x0384"/>
+    <symbol name="Timer_A0_(TA0)" address="near:0x0386"/>
+    <symbol name="Timer_A1_(TA1)" address="near:0x0388"/>
+    <symbol name="Timer_A2_(TA2)" address="near:0x038A"/>
+    <symbol name="Timer_A3_(TA3)" address="near:0x038C"/>
+    <symbol name="Timer_A4_(TA4)" address="near:0x038E"/>
+    <symbol name="Timer_B0_(TB0)" address="near:0x0390"/>
+    <symbol name="Timer_B1_(TB1)" address="near:0x0392"/>
+    <symbol name="Timer_B2_(TB2)" address="near:0x0394"/>
+    <symbol name="Timer_A0_mode_register_(TA0MR)" address="near:0x0396"/>
+    <symbol name="Timer_A1_mode_register_(TA1MR)" address="near:0x0397"/>
+    <symbol name="Timer_A2_mode_register_(TA2MR)" address="near:0x0398"/>
+    <symbol name="Timer_A3_mode_register_(TA3MR)" address="near:0x0399"/>
+    <symbol name="Timer_A4_mode_register_(TA4MR)" address="near:0x039A"/>
+    <symbol name="Timer_B0_mode_register_(TB0MR)" address="near:0x039B"/>
+    <symbol name="Timer_B1_mode_register_(TB1MR)" address="near:0x039C"/>
+    <symbol name="Timer_B2_mode_register_(TB2MR)" address="near:0x039D"/>
+    <symbol name="Timer_B2_special_mode_register(tb2sc_addr)" address="near:0x039e"/>
+    <symbol name="UART0_transmit/receive_mode_register_(U0MR)" address="near:0x03A0"/>
+    <symbol name="UART0_bit_rate_generator_(U0BRG)" address="near:0x03A1"/>
+    <symbol name="UART0_transmit_buffer_register_(U0TB)" address="near:0x03A2"/>
+    <symbol name="UART0_transmit/receive_control_register_0_(U0C0)" address="near:0x03A4"/>
+    <symbol name="UART0_transmit/receive_control_register_1_(U0C1)" address="near:0x03A5"/>
+    <symbol name="UART0_receive_buffer_register_(U0RB)" address="near:0x03A6"/>
+    <symbol name="UART1_transmit/receive_mode_register_(U1MR)" address="near:0x03A8"/>
+    <symbol name="UART1_bit_rate_generator_(U1BRG)" address="near:0x03A9"/>
+    <symbol name="UART1_transmit_buffer_register_(U1TB)" address="near:0x03AA"/>
+    <symbol name="UART1_transmit/receive_control_register_0_(U1C0)" address="near:0x03AC"/>
+    <symbol name="UART1_transmit/receive_control_register_1_(U1C1)" address="near:0x03AD"/>
+    <symbol name="UART1_receive_buffer_register_(U1RB)" address="near:0x03AE"/>
+    <symbol name="UART_transmit/receive_control_register_2_(UCON)" address="near:0x03B0"/>
+    <symbol name="Flash_memory_control_register_1_(FMR1)" address="near:0x03B6"/>
+    <symbol name="Flash_memory_control_register_0_(FMR0)" address="near:0x03B7"/>
+    <symbol name="DMA0_request_cause_select_register_(DM0SL)" address="near:0x03B8"/>
+    <symbol name="DMA1_request_cause_select_register_(DM1SL)" address="near:0x03BA"/>
+    <symbol name="CRC_data_register_(CRCD)" address="near:0x03BC"/>
+    <symbol name="CRC_input_register_(CRCIN)" address="near:0x03BE"/>
+    <symbol name="A-D_register_0_(AD0)" address="near:0x03C0"/>
+    <symbol name="A-D_register_1_(AD1)" address="near:0x03C2"/>
+    <symbol name="A-D_register_2_(AD2)" address="near:0x03C4"/>
+    <symbol name="A-D_register_3_(AD3)" address="near:0x03C6"/>
+    <symbol name="A-D_register_4_(AD4)" address="near:0x03C8"/>
+    <symbol name="A-D_register_5_(AD5)" address="near:0x03CA"/>
+    <symbol name="A-D_register_6_(AD6)" address="near:0x03CC"/>
+    <symbol name="A-D_register_7_(AD7)" address="near:0x03CE"/>
+    <symbol name="A-D_control_register_2_(ADCON2)" address="near:0x03D4"/>
+    <symbol name="A-D_control_register_0_(ADCON0)" address="near:0x03D6"/>
+    <symbol name="A-D_control_register_1_(ADCON1)" address="near:0x03D7"/>
+    <symbol name="D-A_register_0_(DA0)" address="near:0x03D8"/>
+    <symbol name="D-A_register_1_(DA1)" address="near:0x03DA"/>
+    <symbol name="D-A_control_register_(DACON)" address="near:0x03DC"/>
+    <symbol name="Port_P0_(P0)" address="near:0x03E0"/>
+    <symbol name="Port_P0_direction_register_(PD0)" address="near:0x03E1"/>
+    <symbol name="Port_P1_(P1)" address="near:0x03E2"/>
+    <symbol name="Port_P1_direction_register_(PD1)" address="near:0x03E3"/>
+    <symbol name="Port_P2_(P2)" address="near:0x03E4"/>
+    <symbol name="Port_P3_(P3)" address="near:0x03E5"/>
+    <symbol name="Port_P2_direction_register_(PD2)" address="near:0x03E6"/>
+    <symbol name="Port_P3_direction_register_(PD3)" address="near:0x03E7"/>
+    <symbol name="Port_P4_(P4)" address="near:0x03E8"/>
+    <symbol name="Port_P5_(P5)" address="near:0x03E9"/>
+    <symbol name="Port_P4_direction_register_(PD4)" address="near:0x03EA"/>
+    <symbol name="Port_P5_direction_register_(PD5)" address="near:0x03EB"/>
+    <symbol name="Port_P6_(P6)" address="near:0x03EC"/>
+    <symbol name="Port_P7_(P7)" address="near:0x03ED"/>
+    <symbol name="Port_P6_direction_register_(PD6)" address="near:0x03EE"/>
+    <symbol name="Port_P7_direction_register_(PD7)" address="near:0x03EF"/>
+    <symbol name="Port_P8_(P8)" address="near:0x03F0"/>
+    <symbol name="Port_P9_(P9)" address="near:0x03F1"/>
+    <symbol name="Port_P8_direction_register_(PD8)" address="near:0x03F2"/>
+    <symbol name="Port_P9_direction_register_(PD9)" address="near:0x03F3"/>
+    <symbol name="Port_P10_(P10)" address="near:0x03F4"/>
+    <symbol name="Port_P11_register(p11_addr)" address="near:0x03f5"/>
+    <symbol name="Port_P10_direction_register_(PD10)" address="near:0x03F6"/>
+    <symbol name="Port_P11_direction_register(pd11_addr)" address="near:0x03f7"/>
+    <symbol name="Port_P12_register(p12_addr)" address="near:0x03f8"/>
+    <symbol name="Port_P13_register(p13_addr)" address="near:0x03f9"/>
+    <symbol name="Port_P12_direction_register(pd12_addr)" address="near:0x03fa"/>
+    <symbol name="Port_P13_direction_register(pd13_addr)" address="near:0x03fb"/>
+    <symbol name="Pull-up_control_register_0_(PUR0)" address="near:0x03FC"/>
+    <symbol name="Pull-up_control_register_1_(PUR1)" address="near:0x03FD"/>
+    <symbol name="Pull-up_control_register_2_(PUR2)" address="near:0x03FE"/>
+    <symbol name="Port_control_register_(PCR)" address="near:0x03FF"/>
+    <symbol name="VECTOR_UNDEFINEDINST" address="FFFDC" entry="true" type="code_ptr"/>
+    <symbol name="VECTOR_OVERFLOW"      address="FFFE0" entry="true" type="code_ptr"/>
+    <symbol name="VECTOR_BRK"           address="FFFE4" entry="true" type="code_ptr"/>
+    <symbol name="VECTOR_ADDRESSMATCH"  address="FFFE8" entry="true" type="code_ptr"/>
+    <symbol name="VECTOR_SINGLESTEP"    address="FFFEC" entry="true" type="code_ptr"/>
+    <symbol name="VECTOR_WATCHDOG"      address="FFFF0" entry="true" type="code_ptr"/>
+    <symbol name="VECTOR_DBC"           address="FFFF4" entry="true" type="code_ptr"/>
+    <symbol name="VECTOR_NMI"           address="FFFF8" entry="true" type="code_ptr"/>
+    <symbol name="VECTOR_RESET"         address="FFFFC" entry="true" type="code_ptr"/>
   </default_symbols>
   <default_memory_blocks>
     <memory_block name="SFR" start_address="near:0x00" length="0x400" initialized="false"/>
