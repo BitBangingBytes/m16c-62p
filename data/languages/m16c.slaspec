@@ -11,9 +11,9 @@ define register offset=0x00 size=2 [ INTBH INTBL];
 define register offset=0x30 size=4 [ PC];
 
 
-define register offset=0x50 size=2 [ R0 R2 R1 R3 A0 A1 USP ISP SB FLAG SP FB];
 define register offset=0x50 size=4 [ R2R0 R3R1 A1A0];
-define register offset=0x50 size=1 [ R0L R0H _ _ R1L R1H _ _  _ _ _ _ ];
+define register offset=0x50 size=2 [ R2 R0 R3 R1 A1 A0 USP ISP SB FLAG SP FB];
+define register offset=0x50 size=1 [ _ _ R0L R0H _ _ R1L R1H _ _ _ _ ];
 
 define register offset=0x100 size=1 [Cflg Dflg Zflg Sflg Bflg Oflg Iflg Uflg IPLflg];
 define register offset=0x120 size=4  [ contextreg ];
@@ -986,6 +986,10 @@ dest4: addr  is dsp8 [addr = (inst_start+2)+dsp8;] { export *:4 addr; }
 #	goto [j_eaw];
 #}
 #
+:JMPI.a j_eaw          is (op0_7=0x7D & op12_15=0x00) ... & j_eaw {
+	goto [j_eaw];
+}
+
 #:JMPS imm8             is ops0_7=0xEE; imm8 {
 #}
 #
